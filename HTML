@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+<link rel="stylesheet" type="text/css" href="Project2CSS.css">
+</head>
+<title>COSC365</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+
+<h1>COSC365 Networking</h1>
+<h2>Project 2</h2>
+<p>Rest API</p>
+
+<form>
+
+First name:<br>
+<input type = "text"
+name = : "firstname"><br>
+
+Last name:<br>
+<input type = "text"
+name = : "lastname"><br>
+
+Email:<br>
+<input type = "text"
+name = : "email"><br>
+
+Company:<br>
+<input type = "text"
+name = : "company"><br>
+
+Phone number:<br>
+<input type = "text"
+name = : "phone"><br>
+
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+$.post("localhost3000",
+{
+	firstname,
+	lastname,
+	email,
+	company,
+	phone
+	},
+	function(data, status){
+	alert("Data: " + data + "\nStatus: " + status);
+	});
+	});
+	});
+</script>
+	
+<button>Send Data</button>
+
+</form>
+
+</body>
+</html>
