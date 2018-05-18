@@ -1,6 +1,6 @@
 # Project2
 Project2 for COSC 331
-This is a rest api project for my COSC 365 Networking class.
+This is a rest api project for my COSC 331 Networking class.
 
 The html front end takes data in the form of  a first name,
 last name, email, company, and phone number.
