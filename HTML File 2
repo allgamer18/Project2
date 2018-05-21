@@ -2,6 +2,8 @@
 <html>
 <head>
 
+<!-- Link to the CSS file -->
+
 <head>
 <link rel="stylesheet" type="text/css" href="Project2CSS.css">
 </head>
@@ -13,9 +15,13 @@
 
 <body>
 
+<!-- Heading -->
+
 <h1>COSC365 Networking</h1>
 <h2>Project 2</h2>
 <p>Rest API</p>
+
+<!-- This script is for the GET feature -->
 
 <script>
 var settingsGET = {
@@ -30,6 +36,8 @@ var settingsGET = {
 "processData": false,
 }
 </script>
+
+<!-- The first form that contains the text boxes and buttons for the POST feature -->
 
 <form>
 
@@ -56,6 +64,8 @@ Phone number:<br>
 <input type = "text"
  id = "phone"><br>
 
+ <!-- This section defines the variables to be sent -->
+ 
 <script>
 var firstName = document.getElementById(firstName);
 var lastName = document.getElementById(lastName);
@@ -63,6 +73,8 @@ var email = document.getElementById(email);
 var company = document.getElementById(company);
 var phone = document.getElementById(phone);
 </script>
+
+<!-- This script is for the POST feature -->
 
 <script>
 var settingsPOST = {
@@ -98,6 +110,8 @@ console.log(response);
 <!-- This section utilizes the GET feature to receive a contact from the database with all of their information -->
 
 <form>
+
+<!-- The second for which contains the button and script for the GET feature -->
 
 <script>
 $("button").click(function(){
