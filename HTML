@@ -21,6 +21,7 @@
 
 <!-- This section is the text boxes that receive user input for sending to the database -->
 
+
 First name:<br>
 <input type = "text"
 name = : "firstName"><br>
@@ -46,22 +47,44 @@ name = : "phone"><br>
 <script>
 $(document).ready(function(){
 $("button").click(function(){
-$.post("localhost3000",
+$.post("localhost:3000/contact",
 {
-	firstname,
-	lastname,
-	email,
-	company,
-	phone
+	firstname.serialize(),
+	lastname.serialize(),
+	email.serialize(),
+	company.serialize(),
+	phone.serialize()
 	},
 	function(data, status){
 	alert("Data: " + data + "\nStatus: " + status);
 	});
 	});
 	});
-</script>
+	</script>
 	
+	
+<br><br>	
 <button>Send Data</button>
+
+</form>
+
+<!-- This section utilizes the GET feature to receive a contact from the database with all of their information -->
+
+<form>
+
+<script>
+	$("button").click(function(){
+    $.get("localhost:3000/contact", function(){
+        alert(firstName + " " + lastName + " " + email " " + company + " " + phone);
+    });
+});
+</script>
+<br><br>
+
+<h3>Use this button to get a contacts information</h3>
+
+<br><br>
+<button>Get Contact</button>
 
 </form>
 
