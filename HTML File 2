@@ -11,6 +11,8 @@
 <title>COSC365</title>
 </head>
 
+<!-- This scripts links to the AJAX/Jquery library to be able to use the commands -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <body>
