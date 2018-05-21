@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<head>
+<link rel="stylesheet" type="text/css" href="Project2CSS.css">
+</head>
+
+<title>COSC365</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+
+<h1>COSC365 Networking</h1>
+<h2>Project 2</h2>
+<p>Rest API</p>
+
+<script>
+var settingsGET = {
+"async": true,
+"crossDomain": true,
+"url": "http://localhost:3000/contact/",
+"method": "GET",
+"headers": {
+"Content-Type": "application/json",
+"Cache-Control": "no-cache"
+},
+"processData": false,
+}
+</script>
+
+<form>
+
+<!-- This section is the text boxes that receive user input for sending to the database -->
+
+
+First name:<br>
+<input type = "text"
+ id = "firstName"><br>
+
+Last name:<br>
+<input type = "text"
+ id = "lastName"><br>
+
+Email:<br>
+<input type = "text"
+ id = "email"><br>
+
+Company:<br>
+<input type = "text"
+ id = "company"><br>
+
+Phone number:<br>
+<input type = "text"
+ id = "phone"><br>
+
+<script>
+var firstName = document.getElementById(firstName);
+var lastName = document.getElementById(lastName);
+var email = document.getElementById(email);
+var company = document.getElementById(company);
+var phone = document.getElementById(phone);
+</script>
+
+<script>
+var settingsPOST = {
+"async": true,
+"crossDomain": true,
+"url": "http://localhost:3000/contact/",
+"method": "POST",
+"headers": {
+"Content-Type": "application/json",
+"Cache-Control": "no-cache"
+},
+"processData": false,
+"data": {firstName, lastName, email, company, phone}
+}
+</script>
+
+<!-- This section defines the POST request by sending the data to "localhost3000" -->
+
+<script>
+$("button").click(function(){
+$.ajax(settingsPOST).done(function (response) {
+console.log(response);
+})
+});
+</script>
+	
+	
+<br><br>	
+<button>Send Data</button>
+
+</form>
+
+<!-- This section utilizes the GET feature to receive a contact from the database with all of their information -->
+
+<form>
+
+<script>
+$("button").click(function(){
+$.ajax(settingsGET).done(function (response) {
+console.log(response);
+})
+});
+</script>
+
+<br><br>
+
+<h3>Use the button below to get a contact's information</h3>
+
+<br><br>
+<button>Get Contact</button>
+
+</form>
+
+<h3>Thank you for using my server and client!</h3>
+
+</body>
+</html>
