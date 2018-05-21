@@ -2,12 +2,16 @@
 <html>
 <head>
 
+<!-- This links the CSS file to the main HTML file -->
+
 <head>
 <link rel="stylesheet" type="text/css" href="Project2CSS.css">
 </head>
 
 <title>COSC365</title>
 </head>
+
+<!-- This scripts links to the AJAX/Jquery library to be able to use the commands -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -24,36 +28,46 @@
 
 First name:<br>
 <input type = "text"
-name = : "firstName"><br>
+ id = "firstName"><br>
 
 Last name:<br>
 <input type = "text"
-name = : "lastName"><br>
+ id = "lastName"><br>
 
 Email:<br>
 <input type = "text"
-name = : "email"><br>
+ id = "email"><br>
 
 Company:<br>
 <input type = "text"
-name = : "company"><br>
+ id = "company"><br>
 
 Phone number:<br>
-<input type = "number"
-name = : "phone"><br>
+<input type = "text"
+ id = "phone"><br>
+
+ <!-- This section defines the variables to be sent to the server -->
+ 
+<script>
+var firstName = document.getElementById(firstName);
+var lastName = document.getElementById(lastName);
+var email = document.getElementById(email);
+var company = document.getElementById(company);
+var phone = document.getElementById(phone);
+</script>
 
 <!-- This section defines the POST request by sending the data to "localhost3000" -->
 
 <script>
 $(document).ready(function(){
 $("button").click(function(){
-$.post("localhost:3000/contact",
+$.post("http://localhost:3000/contact/",
 {
-	firstname.serialize(),
-	lastname.serialize(),
-	email.serialize(),
-	company.serialize(),
-	phone.serialize()
+	firstname,
+	lastname,
+	email,
+	company,
+	phone
 	},
 	function(data, status){
 	alert("Data: " + data + "\nStatus: " + status);
@@ -72,9 +86,11 @@ $.post("localhost:3000/contact",
 
 <form>
 
+<!-- Script for the GET feature -->
+
 <script>
 	$("button").click(function(){
-    $.get("localhost:3000/contact", function(){
+    $.get("http://localhost:3000/contact/", function(){
         alert(firstName + " " + lastName + " " + email " " + company + " " + phone);
     });
 });
